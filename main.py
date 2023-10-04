@@ -1,3 +1,7 @@
+# App Name: text_to_morse
+# App Author: Paul Kordana
+# App Description: simple python script to translate user input text into morse code representation
+
 MORSE_DICT = {
     'A': '.-',
     'B': '-...',
@@ -27,6 +31,7 @@ MORSE_DICT = {
     'Z': '--..',
 }
 
+
 def validate_char(letter):
     """Dictionary lookup to validate input"""
     return letter.upper() in list(MORSE_DICT.keys())
@@ -35,6 +40,7 @@ def validate_char(letter):
 def translate_char(letter):
     """Dictionary lookup of character input"""
     return MORSE_DICT[letter.upper()]
+
 
 # welcome message
 print("This program will take your text input and translate it into morse code.")
@@ -45,7 +51,7 @@ text_input = input("Enter text to translate: ")
 # init output var
 morse_output = ""
 
-# translate each letter
+# validate/translate each letter and concat to output var
 for c in text_input:
     if validate_char(c):
         morse_output += translate_char(c)
@@ -53,4 +59,5 @@ for c in text_input:
         morse_output += c
     morse_output += ' '
 
+# print translated text to console
 print(morse_output)
