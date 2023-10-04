@@ -40,10 +40,12 @@ class Morse:
 
         # loop letters and validate they exist in the dictionary
         for letter in word:
+            # convert to upper to match dictionary keys
             if letter.upper() in list(self.morse_dict.keys()):
                 output += self.morse_dict[letter.upper()]
             else:
                 output += letter
+            # add blank space between letters
             output += ' '
 
         return output
