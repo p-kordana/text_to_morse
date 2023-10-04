@@ -51,5 +51,6 @@ for c in text_input:
         morse_output += translate_char(c)
     else:
         morse_output += c
+    morse_output += ' '
 
 print(morse_output)
