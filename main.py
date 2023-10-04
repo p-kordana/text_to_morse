@@ -2,36 +2,14 @@
 # App Author: Paul Kordana
 # App Description: simple python script to translate user input text into morse code representation
 
-MORSE_DICT = {
-    'A': '.-',
-    'B': '-...',
-    'C': '-.-.',
-    'D': '-..',
-    'E': '.',
-    'F': '..-.',
-    'G': '--.',
-    'H': '....',
-    'I': '..',
-    'J': '.---',
-    'K': '-.-',
-    'L': '.-..',
-    'M': '--',
-    'N': '-.',
-    'O': '---',
-    'P': '.--.',
-    'Q': '--.-',
-    'R': '.-.',
-    'S': '...',
-    'T': '-',
-    'U': '..-',
-    'V': '...-',
-    'W': '.--',
-    'X': '-..-',
-    'Y': '-.--',
-    'Z': '--..',
-}
+# imports
+import morse
+
+# assign dict from morse file
+MORSE_DICT = morse.MORSE_DICT
 
 
+# methods 
 def validate_char(letter):
     """Dictionary lookup to validate input"""
     return letter.upper() in list(MORSE_DICT.keys())
