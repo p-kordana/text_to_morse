@@ -32,11 +32,18 @@ class Morse:
         }
 
     # methods 
-    def validate_char(self, letter):
-        """Dictionary lookup to validate input"""
-        return letter.upper() in list(self.morse_dict.keys())
-
-
-    def translate_char(self, letter):
+    def translate_word(self, word):
         """Dictionary lookup of character input"""
-        return self.morse_dict[letter.upper()]
+
+        # init output var
+        output = ""
+
+        # loop letters and validate they exist in the dictionary
+        for letter in word:
+            if letter.upper() in list(self.morse_dict.keys()):
+                output += self.morse_dict[letter.upper()]
+            else:
+                output += letter
+            output += ' '
+
+        return output
